@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            /* margin: 20px; */
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* text-align: center; */
+        }
+
+        .fill p {
+            /* text-align: center; */
+            margin: 0%;
+            margin-bottom: 0%;
+            /* width: 100px; */
+            /* height: 30px; */
+        }
+
+        .fill input {
+            border: 1px solid black;
+            border-radius: 5px;
+            /* text-align: center; */
+            height: 30px;
+            width: 250px;
+        }
+
+        .fill select {
+            border: 1px solid black;
+            border-radius: 5px;
+            /* text-align: center; */
+            height: 30px;
+            width: 250px;
+        }
+
+        .div-button {
+            text-align: center;
+        }
+
+        .div-button button {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            border: 2px solid gray;
+            border-radius: 10px;
+            margin-top: 5%;
+        }
+
+        button {
+            padding: 10px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            /* list-style: none; */
+        }
+
+        li {
+            background: #e9f3ff;
+            margin: 5px 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remove-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "KToP44ld2Kaqcw0pF",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <form action="" class="container">
+        <div class="fill">
+            <div>Enter SCAC</div>
+            <input type="text" name="SCAC" id="SCAC" style="text-transform: uppercase;"
+                oninput="this.value = this.value.toUpperCase()">
+        </div>
+        <div class="fill">
+            <div>Enter email</div>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="fill">
+            <div>Enter FC</div>
+            <input type="text" id="FC" name="FC" style="text-transform: uppercase;"
+                oninput="this.value = this.value.toUpperCase()">
+        </div>
+        <div class="fill">
+            <div>Enter PO</div>
+            <div>
+                <input type="text" id="productInput" style="text-transform: uppercase;"
+                    oninput="this.value = this.value.toUpperCase()">
+                <button type="button" onclick="addProduct()">Add</button>
+            </div>
+            <ul id="productList"></ul>
+        </div>
+        <div class="fill">
+            <p>Select Error</p>
+            <select name="Error" id="error">
+                <option value=""> </option>
+                <option value="PO not valid">PO not valid</option>
+                <option value="PO used too many times">PO used too many times</option>
+                <option value="def">vfvf</option>
+            </select>
+        </div>
+        <div class="fill">
+            <p>Upload</p>
+            <input type="file" id="screenshot" name="screenshot" placeholder="aaaa">
+        </div>
+        <div class="div-button"><button type="button" onclick="sendMail()">Submit now</button></div>
+    </form>
+</body>
+<script src="PO.js"></script>
+
+</html>
